@@ -1,23 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import path from 'path'
 
 export default defineConfig({
-  base: './',
   plugins: [react()],
-  css: {
-    postcss: './postcss.config.js',
+  server: {
+    port: 3000,
+    open: true
   },
   build: {
+    outDir: 'dist',
+    sourcemap: true,
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-      },
-    },
+      input: path.resolve(__dirname, 'index.html')
+    }
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
-    },
-  },
+      '@': path.resolve(__dirname, './src')
+    }
+  }
 }) 
