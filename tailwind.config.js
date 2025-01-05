@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Luckiest Guy"', 'cursive'],
+        display: ['"Yay Holiday"', 'cursive'],
       },
       colors: {
         'suck': {
           'gray': '#4A4A4A',
-          'red': '#E53E3E',
+          'red': '#FF0000',
           'light-gray': '#D1D1D1',
           'solana': {
-            'purple': '#E53E3E',
+            'purple': '#FF0000',
             'teal': '#4A4A4A'
           }
         }
@@ -26,6 +26,8 @@ export default {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'scroll': 'scroll 20s linear infinite',
+        'wiggle': 'wiggle 1s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -35,6 +37,14 @@ export default {
         glow: {
           'from': { boxShadow: '0 0 20px rgba(229, 62, 62, 0.5)' },
           'to': { boxShadow: '0 0 40px rgba(229, 62, 62, 0.8)' }
+        },
+        scroll: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-50%)' }
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
         }
       }
     },
