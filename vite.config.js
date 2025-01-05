@@ -4,14 +4,11 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  root: '.',
-  base: './',
+  base: '',
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: path.resolve(__dirname, 'index.html')
-    }
+    assetsDir: 'assets',
+    emptyOutDir: true
   },
   resolve: {
     alias: {
